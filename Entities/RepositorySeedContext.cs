@@ -122,14 +122,18 @@ namespace Entities
                                 TitleRu = "Ты собираешься посетить другую страну",
                                 TitleEn = "Are you going to visit another country",
                                 DescriptionRu = "Договорись остановиться на несколько дней у незнакомого тебе человека и продумайте вместе с ним чем вы будете заниматься в твоем отпуске",
-                                DescriptionEn = "We agreed to stay for a few days with a person you don't know and work out with them what you will do on your vacation"
+                                DescriptionEn = "We agreed to stay for a few days with a person you don't know and work out with them what you will do on your vacation",
+                                Text = "For example, plan a joint trip to a Museum.",
+                                Answer = ""
                             },
                             new TaskEntity
                             {
                                 TitleRu = "Приготовь национальное блюдо другой страны",
                                 TitleEn = "Prepare a national dish of another country",
                                 DescriptionRu = "Созвонись с представителем другой страны и пусть он поможет тебе приготовить их национальное блюдо",
-                                DescriptionEn = "Call a representative of another country and let them help you prepare their national dish"
+                                DescriptionEn = "Call a representative of another country and let them help you prepare their national dish",
+                                Text = "Italian pasta prepared according to my mother's recipe will leave you with the most positive impressions about the time spent cooking",
+                                Answer = ""
                             }
                         }
                     },
