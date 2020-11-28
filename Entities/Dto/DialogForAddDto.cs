@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Entities.Models;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entities.Dto
 {
@@ -10,22 +10,7 @@ namespace Entities.Dto
         
         [Required]
         public int TaskId { get; set; }
-        
-        [Required]
-        public bool IsUserMessage { get; set; }
-        
-        [Required]
-        public string Message { get; set; }
 
-        public DialogEntity ToEntity()
-        {
-            return new DialogEntity
-            {
-                UserId = UserId,
-                TaskId = TaskId,
-                IsUserMessage = IsUserMessage,
-                Message = Message
-            };
-        }
+        public List<MessageDto> Messages { get; set; }
     }
 }

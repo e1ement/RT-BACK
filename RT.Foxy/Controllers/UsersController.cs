@@ -48,8 +48,36 @@ namespace RT.Foxy.Controllers
             try
             {
                 var user = await _repository.UserRepository.GetByIdAsync(id);
+                if (user.Id == 0)
+                {
+                    return NotFound();
+                }
 
                 return Ok(user);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"Something went wrong in the {nameof(GetById)} action {e}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        /// <summary>
+        /// Get User Tasks by Id
+        /// </summary>
+        /// <returns>Returns User Tasks from db</returns>
+        [HttpGet("{id:int}/tasks")]
+        public async Task<IActionResult> GetTasksById(int id)
+        {
+            try
+            {
+                var user = await _repository.UserRepository.GetByIdAsync(id);
+                if (user.Id == 0)
+                {
+                    return NotFound();
+                }
+
+                return Ok(user.Tasks);
             }
             catch (Exception e)
             {

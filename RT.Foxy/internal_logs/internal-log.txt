@@ -521,3 +521,14 @@
 2020-11-28 14:45:09.0566 Info Adding target FileTarget(Name=fileLogError)
 2020-11-28 14:45:09.0670 Info Adding target FileTarget(Name=fileLogFatal)
 2020-11-28 14:45:09.1178 Info Validating config: Targets=5, ConfigItems=75, FilePath=C:\Users\Administrator\Documents\RT-BACK\RT.Foxy/nlog.config
+2020-11-28 15:46:38.3135 Info Auto loading assembly file: C:\Users\Administrator\Documents\RT-BACK\RT.Foxy\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2020-11-28 15:46:38.3749 Info Loading assembly file: C:\Users\Administrator\Documents\RT-BACK\RT.Foxy\bin\Debug\net5.0\NLog.Extensions.Logging.dll
+2020-11-28 15:46:38.5020 Info NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 1.6.5.1409. Product version: 1.6.5+c05b105d8cd52581a50da2af91ebacf8d4bc8f0d. GlobalAssemblyCache: False
+2020-11-28 15:46:38.5020 Info Auto loading assembly file: C:\Users\Administrator\Documents\RT-BACK\RT.Foxy\bin\Debug\net5.0\NLog.Extensions.Logging.dll succeeded!
+2020-11-28 15:46:38.5257 Info Message Template Auto Format enabled
+2020-11-28 15:46:38.6010 Info Adding target FileTarget(Name=fileLogDebug)
+2020-11-28 15:46:38.6120 Info Adding target FileTarget(Name=fileLogInfo)
+2020-11-28 15:46:38.6120 Info Adding target FileTarget(Name=fileLogWarn)
+2020-11-28 15:46:38.6294 Info Adding target FileTarget(Name=fileLogError)
+2020-11-28 15:46:38.6294 Info Adding target FileTarget(Name=fileLogFatal)
+2020-11-28 15:46:38.6782 Info Validating config: Targets=5, ConfigItems=75, FilePath=C:\Users\Administrator\Documents\RT-BACK\RT.Foxy/nlog.config

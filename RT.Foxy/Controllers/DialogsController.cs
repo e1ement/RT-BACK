@@ -2,6 +2,7 @@
 using Entities.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace RT.Foxy.Controllers
@@ -22,27 +23,39 @@ namespace RT.Foxy.Controllers
         /// <summary>
         /// Post dialog
         /// </summary>
-        /// <returns>Returns new MCreated MessageId</returns>
+        /// <returns>Returns new Created MessageId</returns>
         [HttpPost]
         public async Task<IActionResult> UpdateDialog([FromBody] DialogForAddDto dialogMessage)
         {
+            if (dialogMessage.Messages == null || !dialogMessage.Messages.Any())
+            {
+                return BadRequest("Messages is empty");
+            }
+
+            var user = await _repository.UserRepository.GetByIdAsync(dialogMessage.UserId);
+            if (user.Id == 0)
+            {
+                return BadRequest("User not found");
+            }
+
+            var task = await _repository.TaskRepository.GetByIdAsync(dialogMessage.TaskId);
+            if (task.Id == 0)
+            {
+                return BadRequest("Task not found");
+            }
+
             try
             {
-                var user = await _repository.UserRepository.GetByIdAsync(dialogMessage.UserId);
-                if (user.Id == 0)
+                var createdMessages = await _repository.DialogRepository.CreateAsync(dialogMessage);
+                if (createdMessages == 0)
                 {
-                    return BadRequest("User not found");
+                    return BadRequest("Something went wrong");
                 }
 
-                var task = await _repository.TaskRepository.GetByIdAsync(dialogMessage.TaskId);
-                if (task.Id == 0)
-                {
-                    return BadRequest("User not found");
-                }
+                var result =
+                    await _repository.DialogRepository.GetDialogResultAsync(dialogMessage.UserId, dialogMessage.TaskId);
 
-                var messageId = await _repository.DialogRepository.CreateAsync(dialogMessage);
-                    
-                return Created(string.Empty, messageId);
+                return Created(string.Empty, result);
             }
             catch (Exception e)
             {
