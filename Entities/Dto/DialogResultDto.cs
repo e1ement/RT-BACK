@@ -32,7 +32,7 @@ namespace Entities.Dto
             // начисления баллов и корректировки дальнейшей программы обучения
             TaskRelevance = 78;
             WordsPurity = 34;
-            Vocabulary = 126;
+            Vocabulary = 97;
         }
     }
 }
